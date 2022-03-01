@@ -26,17 +26,14 @@ def in_range(head):
     return -250<head[0]<250 and -250 <head[1] <250
 
 def move():
-    #head = snake[-1][:]
     head = [snake[-1][0],snake[-1][1]]
-    #head = copy.deepcopy(snake[-1])
     head = [head[0] + direct[0], head[1] + direct[1]]
-    #print(head)
     if head in snake or not in_range(head):
         make_square(head[0],head[1],10,'red')
         tur.update()
         return
     if head == food:
-        print("snake", len(snake))
+        print("snake is", len(snake))
         food[0] = randrange(-15, 15) * 10
         food[1] = randrange(-15, 15) * 10
     else:
